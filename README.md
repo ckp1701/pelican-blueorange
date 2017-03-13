@@ -28,10 +28,10 @@ Live preview on https://ckp1701.github.io
 
 ## Installation
 
-* Clone or download manualy pelican-uglyblue repository.
+* Clone or download manualy pelican-blueorange repository.
 
 ```
-$ git clone https://github.com/ckp1701/pelican-uglyblue.git
+$ git clone https://github.com/ckp1701/pelican-blueorange.git
 ```
 
 * Create 'THEME' variable in your 'pelicanconf.py'settings with path to your theme.
@@ -39,7 +39,7 @@ $ git clone https://github.com/ckp1701/pelican-uglyblue.git
 Example:
 
 ```python
-THEME = 'pelican-themes\pelican-uglyblue'
+THEME = 'pelican-themes\pelican-blueorange'
 ```
 
 ## Settings
