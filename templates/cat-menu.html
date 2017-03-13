@@ -1,0 +1,14 @@
+{% if DISPLAY_CATEGORIES_ON_MENU and categories %}
+<div class="row-label cat-row inline">
+    
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p class="text-center cat-bar">
+        {% for cat, null in categories %}
+        <a href='{{SITEURL}}/{{cat.url}}' class="cat-label">{{cat}}</a>
+        {% endfor %}
+        </p>
+        <hr>
+    </div>
+
+</div>
+{% endif %}

@@ -1,0 +1,131 @@
+<div class="col-md-3 col-lg-3 hidden-xs hidden-sm">
+
+
+
+                <div class="row side-row">
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 side-cont text-center">
+                        <img src="{{AVATAR}}" class="img-circle" style="height: 80px; width: 80px; border: solid 3px white">
+                        <h2>{{SITENAME}}</h2>
+                        <div>
+                            <a class="twitter-follow-button"
+      href="https://twitter.com/{{TWITTER_USERNAME}}"
+      data-show-count="false"
+      data-lang="en">
+      Follow @{{TWITTER_USERNAME}}
+      </a>
+      <script type="text/javascript">
+      window.twttr = (function (d, s, id) {
+        var t, js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src= "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+      }(document, "script", "twitter-wjs"));
+      </script>
+                        </div>
+
+                        {% if DISPLAY_AUTHOR_MESSAGE %}
+                        <p><em>{{AUTHOR_MESSAGE}}</em></p>
+                        {% endif %}
+                        {% if BOTS_STATS %}
+                        <br>
+                        <h4><strong>Bots encountered:</strong></h4>
+                        <table>
+                            <tr>
+                                <th>Friendly</th>
+                                <th>Hostile</th>
+                            </tr>
+                            <tr>
+                                <td><span style="color: lawngreen">1</span></td>
+                                <td><span style="color: red">17845</span></td>
+                            </tr>
+                            
+                        </table>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if SOCIAL or FEED_ALL_ATOM%}
+                <div class="row side-row">
+
+                
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 side-cont text-center">
+                        {% for name, link in SOCIAL %}
+
+                        <a href="{{ link }}" class='social-ico'>
+                            {% if name == 'github' %}
+                            <i class="fa fa-github fa-3x" aria-hidden="true"></i>
+                            {% endif %}
+
+                             {% if name == 'linkedin' %}
+                            <i class="fa fa-linkedin fa-3x" aria-hidden="true"></i>
+                            {% endif %}
+
+                             {% if name == 'twitter' %}
+                            <i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+                            {% endif %}
+
+                             {% if name == 'facebook' %}
+                            <i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
+                            {% endif %}      
+
+                             {% if name == 'telegram' %}
+                            <i class="fa fa-telegram fa-3x" aria-hidden="true"></i>
+                            {% endif %}                
+                            </a>
+
+                        {% endfor %}
+
+                        {% if FEED_ALL_ATOM %}
+                <a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="social-ico">
+                <i class="fa fa-rss fa-3x" aria-hidden="true"></i></a>
+                {% endif %}
+
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if DISPLAY_TAGS_ON_MENU %}
+                <div class="row side-row">
+                     
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 side-cont">
+                        <p class="side-tags">
+                            {% for t, null in tags %}
+                            <a href="{{SITEURL}}/{{ t.url }}"><nobr><i class="fa fa-tag" aria-hidden="true"></i>{{t}} </nobr></a>
+                            {% endfor %}
+                            
+                        </p>
+
+                    </div>
+                </div>
+                {% endif %}
+
+                {% if ARCHIVE_ACTIVE %}
+
+                <div class="row side-row">
+                     
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 side-cont text-center">
+                        <p> ARCHIVE MODULE NOT WORKING YET!
+                            
+                        </p>
+
+                    </div>
+                </div>
+
+                {% endif %}
+
+
+                {% if LINKS %}
+                <div class="row side-row">
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 side-cont">
+                        {%for name, link in LINKS %}
+                        <div class="text-center"><i class="fa fa-external-link" aria-hidden="true"></i><a href="{{link}}"> {{name}}</a></div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>

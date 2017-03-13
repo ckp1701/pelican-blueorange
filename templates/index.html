@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- category menu -->
+{% include 'cat-menu.html' %}
+<!-- end category menu -->
+<hr><br><br>
+
+
+<div class="row">
+
+    <!-- sidebar -->
+    {% include 'sidebar.html' %}
+    <!-- end sidebar -->
+
+    <!-- content -->
+
+
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 article-cont">
+            <h3><i class="fa fa-file-text-o" aria-hidden="true"></i> Latest:</h3>
+            <br> 
+            {% if articles%} {% for article in (articles_page.object_list if articles_page else articles) %}
+            <div>
+                <h2 class="article-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" class="article-title" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+                {% if DISPLAY_SUMMARY and article.summary|length > 0 %}
+                <p>{{ article.summary }}</p>
+                {% endif %}
+                <p class="article-footer">{{ article.locale_date }} | <a href="{{ SITEURL }}/{{ article.category.url }}" class='article-cat' rel="bookmark"
+                        title="Permalink to {{ article.category|striptags }}">{{ article.category }}</a> | {% for t in article.tags%}<a href="{{ SITEURL }}/{{ t.url }}"><i class="fa fa-tag" aria-hidden="true"></i>{{t}} </a>
+                        {% endfor %}</p>
+            </div><br> {% endfor %} {% endif %}
+            <br><br>
+            <div class="pull-right">
+                {% if articles_page and articles_paginator.num_pages > 1 %}
+{% include 'pagination.html' %}
+{% endif %}
+            </div>
+
+        </div>
+    </div>
+    <!--  end content -->
+
+
+
+</div>
+{% endblock content %}
+
+
