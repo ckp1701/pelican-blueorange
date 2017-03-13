@@ -5,7 +5,7 @@
                 <div class="row side-row">
 
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 side-cont text-center">
-                        <img src="{{AVATAR}}" class="img-circle" style="height: 80px; width: 80px; border: solid 3px white">
+                        <img src="{{AVATAR}}" class="img-circle" alt="avatar" style="height: 80px; width: 80px; border: solid 3px white">
                         <h2>{{SITENAME}}</h2>
                         <div>
                             <a class="twitter-follow-button"
@@ -27,7 +27,7 @@
                         </div>
 
                         {% if DISPLAY_AUTHOR_MESSAGE %}
-                        <p><em>{{AUTHOR_MESSAGE}}</em></p>
+                        <p><span class="f-italic">{{AUTHOR_MESSAGE}}</span></p>
                         {% endif %}
                         {% if BOTS_STATS %}
                         <br>
@@ -93,7 +93,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 side-cont">
                         <p class="side-tags">
                             {% for t, null in tags %}
-                            <a href="{{SITEURL}}/{{ t.url }}"><nobr><i class="fa fa-tag" aria-hidden="true"></i>{{t}} </nobr></a>
+                            <a href="{{SITEURL}}/{{ t.url }}"><span class="nobr"><i class="fa fa-tag" aria-hidden="true"></i>{{t}}</span> </a>
                             {% endfor %}
                             
                         </p>

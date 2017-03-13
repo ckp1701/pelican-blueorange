@@ -23,7 +23,7 @@
             <div>
                 <h2 class="article-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" class="article-title" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
                 {% if DISPLAY_SUMMARY and article.summary|length > 0 %}
-                <p>{{ article.summary }}</p>
+                {{ article.summary }}
                 {% endif %}
                 <p class="article-footer">{{ article.locale_date }} | <a href="{{ SITEURL }}/{{ article.category.url }}" class='article-cat' rel="bookmark"
                         title="Permalink to {{ article.category|striptags }}">{{ article.category }}</a> | {% for t in article.tags%}<a href="{{ SITEURL }}/{{ t.url }}"><i class="fa fa-tag" aria-hidden="true"></i>{{t}} </a>

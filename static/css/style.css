@@ -72,10 +72,7 @@ transition: color 1s;
 
 }
 
-.content-body-row{
-    
-    
-}
+
 
 
 .article-cont{
@@ -106,12 +103,6 @@ hr {
 .article-title{
     font-weight: bold
 }
-
-.article-summary{
-
-}
-
-
 
 
 
@@ -185,5 +176,11 @@ transition: background-color 1s;
     word-spacing: 3px;
 }
 
+.nobr
+{ white-space:nowrap; }
+
+.f-italic{
+    font-style: italic;
+}
 
     
