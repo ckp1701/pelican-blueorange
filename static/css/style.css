@@ -117,14 +117,17 @@ hr {
 
 a{
     color: #3B83DF;
+    
     -webkit-transition: color 0.5s;
     -moz-transition: color 0.5s;
 -o-transition: color 0.5s;
 transition: color 0.5s;
+
 }
 
 a:hover{
     text-decoration: none;
+    color: #7CABE7;
 }
 
 .article-cat{
